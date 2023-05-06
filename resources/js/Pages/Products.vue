@@ -13,7 +13,7 @@ import AppLayout from '@/Layouts/AppLayout.vue';
         <div class="py-12">
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
                 <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg p-4">
-                    Productos!
+                   <h3 class="mb-4 font-semibold">Productos disponibles</h3>
                     <section class="grid grid-cols-3 gap-4">
                      <div v-for="(item, index) in $page.props.products" :key="index" class="border rounded-lg overflow-hidden flex flex-col justify-between" >
                          <img :src="item.image_url" :alt="item.name" class="w-full h-48 object-cover">

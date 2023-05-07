@@ -31,10 +31,14 @@ Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
     'verified',
-])->group(function () {
+])->prefix('/admin')->group(function () {
     Route::get('/dashboard', function () {
         return Inertia::render('Dashboard');
     })->name('dashboard');
 
     Route::get('/productos', [ProductsController::class, 'index'])->name('productos');
+    Route::put('/productos/{id}', [ProductController::class, 'update'])->name('productos.update');
+
+    Route::get('/products', [ProductsController::class, 'products'])->name('products');
+
 });

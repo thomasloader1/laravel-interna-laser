@@ -7,10 +7,13 @@ import Dropdown from '@/Components/Dropdown.vue';
 import DropdownLink from '@/Components/DropdownLink.vue';
 import NavLink from '@/Components/NavLink.vue';
 import ResponsiveNavLink from '@/Components/ResponsiveNavLink.vue';
+import { useStore } from 'vuex';
 
 defineProps({
     title: String,
 });
+
+const store = useStore()
 
 const showingNavigationDropdown = ref(false);
 
@@ -28,7 +31,7 @@ const logout = () => {
 </script>
 
 <template>
-    <div>
+    <div :class="{'blur-sm' : store.state.showModal}">
         <Head :title="title" />
 
         <Banner />
